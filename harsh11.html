@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search System</title>
+</head>
+<body>
+
+<h2>Search By Name</h2>
+
+<input type="text" id="searchName" placeholder="Enter Name">
+<button onclick="searchData()">Search</button>
+
+<p id="result"></p>
+
+<script>
+let users = [
+    {name: "Harsh", age: 18, city: "Ahmedabad" adhar no:"1112334565"},
+    {name: "Rahul", age: 20, city: "Surat"},
+    {name: "Amit", age: 22, city: "Rajkot"}
+];
+
+function searchData() {
+    let name = document.getElementById("searchName").value;
+    let found = users.find(user => user.name.toLowerCase() === name.toLowerCase());
+
+    if(found){
+        document.getElementById("result").innerHTML =
+        "Name: " + found.name + "<br>Age: " + found.age + "<br>City: " + found.city;
+    } else {
+        document.getElementById("result").innerHTML = "No Data Found!";
+    }
+}
+</script>
+
+</body>
+</html>
